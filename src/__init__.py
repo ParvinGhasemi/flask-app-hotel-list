@@ -1,4 +1,4 @@
-from flask import Flask 
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
@@ -17,7 +17,9 @@ def get_hotels():
         #rows += f'<tr><td>{hotel.get('id')}</td><td>{hotel.get('name')}</td><td>{hotel.get('rating')}</td></tr>'
         
     #return f'<html><body><table><tr><th>Name</th></tr>{rows}</table></body></html>'
-    return '<html><body><table border = 1>' + rows + '</table></body></html>'
+    #return '<html><body><table border = 1>' + rows + '</table></body></html>'
+#    return render_template('hotels.html', rows=rows)
+    return render_template('template.html', hotel_ratings=hotel_ratings)
 
 
 
